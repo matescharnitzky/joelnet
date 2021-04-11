@@ -1,8 +1,7 @@
 """
-A NeuralNet is just a collection of layers.
-It behaves a lot like a layer itself, although
-we're not going to make it one.
+A Neural Net is just a collection of layers.
 """
+
 from typing import Sequence, Iterator, Tuple
 
 from joelnet.tensor import Tensor

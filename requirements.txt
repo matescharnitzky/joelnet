@@ -1,1 +1,15 @@
-numpy
+certifi==2020.12.5
+#mkl-fft==1.2.0
+#mkl-random==1.1.1
+#mkl-service==2.3.0
+mypy==0.790
+mypy-extensions==0.4.3
+numpy==1.19.2
+pip==20.3.3
+psutil==5.7.2
+#setuptools==51.1.2.post20210112
+six==1.15.0
+typed-ast==1.4.2
+typing-extensions==3.7.4.3
+wheel==0.36.2
+wincertstore==0.2

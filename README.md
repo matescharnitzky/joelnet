@@ -1,3 +1,11 @@
+# joelnet from scratch
+This is a learning project to reproduce joelnet, Joel Grus's Deep Learning library.\
+I've never met or talked to Joel in person, however I find his content high-quality and very educational:
+* books: Data Science from Scratch, Ten Essays on Fizz Buzz
+* videos: Live Coding Madness, Advent of Code, Jupyter Notebooks...etc.
+
+Regarding this project, full credit and original repository: https://github.com/joelgrus/joelnet
+
 # Livecoding Madness: Let's Build a Deep Learning Library
 
 [video](https://www.youtube.com/watch?v=o64FV-ez6Gw) of the livecoding.

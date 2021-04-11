@@ -1,6 +1,6 @@
+
 """
 FizzBuzz is the following problem:
-
 For each of the numbers 1 to 100:
 * if the number is divisible by 3, print "fizz"
 * if the number is divisible by 5, print "buzz"
@@ -15,6 +15,7 @@ from joelnet.train import train
 from joelnet.nn import NeuralNet
 from joelnet.layers import Linear, Tanh
 from joelnet.optim import SGD
+
 
 def fizz_buzz_encode(x: int) -> List[int]:
     if x % 15 == 0:
@@ -32,6 +33,7 @@ def binary_encode(x: int) -> List[int]:
     10 digit binary encoding of x
     """
     return [x >> i & 1 for i in range(10)]
+
 
 inputs = np.array([
     binary_encode(x)

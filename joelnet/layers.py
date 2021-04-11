@@ -1,15 +1,12 @@
 """
 Our neural nets will be made up of layers.
 Each layer needs to pass its inputs forward
-and propagate gradients backward. For example,
-a neural net might look like
+and propagate gradients backward. For example:
 
 inputs -> Linear -> Tanh -> Linear -> output
 """
-from typing import Dict, Callable
-
 import numpy as np
-
+from typing import Dict, Callable
 from joelnet.tensor import Tensor
 
 
@@ -33,7 +30,7 @@ class Layer:
 
 class Linear(Layer):
     """
-    computes output = inputs @ w + b
+    Computes output = input @ w + b
     """
     def __init__(self, input_size: int, output_size: int) -> None:
         # inputs will be (batch_size, input_size)
@@ -52,8 +49,8 @@ class Linear(Layer):
     def backward(self, grad: Tensor) -> Tensor:
         """
         if y = f(x) and x = a * b + c
-        then dy/da = f'(x) * b
-        and dy/db = f'(x) * a
+        then dy/da = f'(x) * a
+        and dy/db = f'(x) * b
         and dy/dc = f'(x)
 
         if y = f(x) and x = a @ b + c
@@ -61,12 +58,14 @@ class Linear(Layer):
         and dy/db = a.T @ f'(x)
         and dy/dc = f'(x)
         """
+
         self.grads["b"] = np.sum(grad, axis=0)
         self.grads["w"] = self.inputs.T @ grad
         return grad @ self.params["w"].T
 
 
 F = Callable[[Tensor], Tensor]
+
 
 class Activation(Layer):
     """
@@ -92,6 +91,7 @@ class Activation(Layer):
 
 def tanh(x: Tensor) -> Tensor:
     return np.tanh(x)
+
 
 def tanh_prime(x: Tensor) -> Tensor:
     y = tanh(x)

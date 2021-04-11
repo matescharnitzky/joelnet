@@ -1,9 +1,11 @@
 """
-We use an optimizer to adjust the parameters
+We use an optimizer to adjust the parameters of
 of our network based on the gradients computed
-during backpropagation
+during the backpropagation
 """
+
 from joelnet.nn import NeuralNet
+
 
 class Optimizer:
     def step(self, net: NeuralNet) -> None:
@@ -11,7 +13,7 @@ class Optimizer:
 
 
 class SGD(Optimizer):
-    def __init__(self, lr: float = 0.01) -> None:
+    def __init__(self, lr: float = 0.01) -> None:  # learning rate
         self.lr = lr
 
     def step(self, net: NeuralNet) -> None:
